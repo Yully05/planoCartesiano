@@ -12,3 +12,4 @@ if __name__ == "__main__":
     ]
 
     dibujar_puntos(lista_puntos)
+    print("hice cambios")
