@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # type: ignore
 
 def dibujar_puntos(lista_puntos):
     for punto in lista_puntos:
@@ -9,4 +9,4 @@ def dibujar_puntos(lista_puntos):
     plt.axvline(0, color='gray')  # eje y
     plt.grid(True)
     plt.title("Plano Cartesiano - Puntos")
-    plt.show()
+    plt.show()  
