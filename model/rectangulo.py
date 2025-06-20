@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from utils.operaciones import Operaciones
 from utils.ordenamiento import Ordenamiento
 
@@ -25,3 +26,18 @@ class Rectangulo:
             angulos += 1
 
         return angulos == 4
+=======
+from utils.operaciones import anguloRecto
+
+def validacionRectangulo(puntos):
+    if len(puntos) != 4:
+        return False
+
+    p = puntos
+    return (
+        anguloRecto(p[0], p[1], p[2]) and
+        anguloRecto(p[1], p[2], p[3]) and
+        anguloRecto(p[2], p[3], p[0]) and
+        anguloRecto(p[3], p[0], p[1])
+    )
+>>>>>>> 9db5f56897128f2fe38e4226e8fd616d806d2632

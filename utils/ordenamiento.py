@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Ordenamiento:
 
     @staticmethod
@@ -59,3 +60,12 @@ class Ordenamiento:
                 return c, a, b
             else:
                 return c, b, a
+=======
+def ordenar_por_area(figuras): # ordena por clave area
+    n = len(figuras)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if figuras[j]['area'] > figuras[j + 1]['area']:
+                figuras[j], figuras[j + 1] = figuras[j + 1], figuras[j]
+    return figuras
+>>>>>>> 9db5f56897128f2fe38e4226e8fd616d806d2632
