@@ -5,12 +5,13 @@ from model.triangulo import validacionTriangulo
 from utils.combinatoria import combinaciones
 from graphics.graficos import dibujarPuntos
 
+
 lista1 = [Punto(0, 1), Punto(2, 0), Punto(2, 2), Punto(0, 2)]
 lista2 = [Punto(3, 1), Punto(2, 2), Punto(1, 1), Punto(4, 5), Punto(2,5)]
 lista3 = [Punto(0, 1), Punto(5, 1), Punto(3, 2), Punto(1, 2), Punto(3,1)]
 lista4 = [Punto(1, 1), Punto(3, 4), Punto(2, 3), Punto(3, 1)]
 lista5 =[Punto(0, 0), Punto(2, 0), Punto(4, 0), Punto(4, 2), Punto(2,2), Punto(0,2)]
-listaPuntos = [lista2]
+listaPuntos = [lista1]
 
 def analizarLista(lista):
     cuadrados = 0
@@ -43,6 +44,7 @@ if __name__ == "__main__":
 
 
     for lista in (listaPuntos):
-        dibujarPuntos(lista)
         analizarLista(lista)
+        dibujarPuntos(lista)
+        
 
