@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-class Operaciones:
-    def distancia(p1,p2):
-        distanciaX = p1.x-p2.x
-        distanciaY = p1.y-p2.y
-        return distanciaX*distanciaY + distanciaY*distanciaY  #sin usar la raiz cuadrada
-    
-
-    def vector(p1,p2):
-        return ((p2.x - p1.y, p2.y - p1.y))
-    
-    def producto_punto(v1, v2):
-        return v1[0] * v2[0] + v1[1] * v2[1]
-    
-
 def son_iguales(a, b):
         # Comparación manual con margen de tolerancia
         diferencia = a - b
@@ -20,7 +5,7 @@ def son_iguales(a, b):
             diferencia = -diferencia
         return diferencia <= 0.00001
     
-=======
+
 def ecDistancia(punto1, punto2):
     dis = (((punto2.x - punto1.x)**2 + (punto2.y - punto1.y)**2)**0.5)
     return dis
@@ -51,4 +36,4 @@ def calcularDistancia(puntos, i=0, j=1, distancia=None):
     return calcularDistancia(puntos, i, j + 1, distancia)
 
 
->>>>>>> 9db5f56897128f2fe38e4226e8fd616d806d2632
+
