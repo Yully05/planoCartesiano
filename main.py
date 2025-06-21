@@ -12,30 +12,40 @@ lista4 = [Punto(1, 1), Punto(3, 4), Punto(2, 3), Punto(3, 1)]
 listaPuntos = [lista3]
 
 def analizarLista(lista):
-    cuadrados = 0
-    rectangulos = 0
-    triangulos_r = 0
-    triangulos_a = 0
+    contCuadrados = 0
+    cuadrados = []
+    contRectangulos = 0
+    rectangulos = []
+    contTrianRectangulo = 0
+    triangulosRectangulos = []
+    contTriAcutangulo = 0
+    triangulosAcutangulos = []
 
     combinaciones4 = combinaciones(lista, 4) #combinaciones de 4 puntos para cuadrados y rectangulos
     for puntos in combinaciones4:
         if validacionCuadrado(puntos):
-            cuadrados += 1
+            contCuadrados += 1
+            cuadrados.append({"puntos": puntos})
         elif validacionRectangulo(puntos):
-            rectangulos += 1
+            contRectangulos += 1
+            rectangulos.append({"puntos": puntos})
 
     combinaciones3 = combinaciones(lista, 3) #combinaciones de 3 puntos para triaungulos
     for puntos in combinaciones3:
         tipo = validacionTriangulo(puntos)
         if tipo == "rectangulo":
-            triangulos_r += 1
+            contTrianRectangulo +=1
+            triangulosRectangulos.append({"puntos": puntos})
         elif tipo == "acutangulo":
-            triangulos_a += 1
+            contTriAcutangulo +=1
+            triangulosAcutangulos.append({"puntos": puntos})
 
-    print("Cuadrados:", cuadrados)
-    print("Rectangulos:", rectangulos)
-    print("Triangulos rectangulos:", triangulos_r)
-    print("Triangulos acutagulos:", triangulos_a)
+    print("Cuadrados:", contCuadrados, len(cuadrados))
+    print("Rectangulos:", contRectangulos, len(rectangulos))
+    print("Triangulos rectangulos:", contTrianRectangulo, len(triangulosRectangulos))
+    print("Triangulos acutagulos:", contTriAcutangulo, len(triangulosAcutangulos))
+
+    #return cuadrados + rectangulos + triangulosRectangulos+ triangulosAcutangulos
 
 if __name__ == "__main__":
     print("Proyecto ADA I")
