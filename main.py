@@ -11,7 +11,7 @@ lista2 = [Punto(3, 1), Punto(2, 2), Punto(1, 1), Punto(4, 5), Punto(2,5)]
 lista3 = [Punto(0, 1), Punto(5, 1), Punto(3, 2), Punto(1, 2), Punto(3,1)]
 lista4 = [Punto(1, 1), Punto(3, 4), Punto(2, 3), Punto(3, 1)]
 lista5 =[Punto(0, 0), Punto(2, 0), Punto(4, 0), Punto(4, 2), Punto(2,2), Punto(0,2)]
-listaPuntos = [lista1]
+listaPuntos = [lista2]
 
 def analizarLista(lista):
     contCuadrados = 0
@@ -27,25 +27,25 @@ def analizarLista(lista):
     for puntos in combinaciones4:
         if validacionCuadrado(puntos):
             contCuadrados += 1
-            cuadrados.append({"puntos": puntos})
+            cuadrados.append({"nombre": "cuadrado", "puntos": puntos})
         elif validacionRectangulo(puntos):
             contRectangulos += 1
-            rectangulos.append({"puntos": puntos})
+            rectangulos.append({"nombre": "rectangulo", "puntos": puntos})
 
     combinaciones3 = combinaciones(lista, 3) #combinaciones de 3 puntos para triaungulos
     for puntos in combinaciones3:
         tipo = validacionTriangulo(puntos)
         if tipo == "rectangulo":
             contTrianRectangulo +=1
-            triangulosRectangulos.append({"puntos": puntos})
+            triangulosRectangulos.append({"nombre": "triangulo rectangulo", "puntos": puntos})
         elif tipo == "acutangulo":
             contTriAcutangulo +=1
-            triangulosAcutangulos.append({"puntos": puntos})
+            triangulosAcutangulos.append({"nombre": "triangulo acutangulo", "puntos": puntos})
 
-    print("Cuadrados:", contCuadrados, len(cuadrados))
-    print("Rectangulos:", contRectangulos, len(rectangulos))
-    print("Triangulos rectangulos:", contTrianRectangulo, len(triangulosRectangulos))
-    print("Triangulos acutagulos:", contTriAcutangulo, len(triangulosAcutangulos))
+    print("Cuadrados:", contCuadrados)
+    print("Rectangulos:", contRectangulos)
+    print("Triangulos rectangulos:", contTrianRectangulo)
+    print("Triangulos acutagulos:", contTriAcutangulo)
 
     #return cuadrados + rectangulos + triangulosRectangulos+ triangulosAcutangulos
 

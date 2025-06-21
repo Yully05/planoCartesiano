@@ -1,16 +1,16 @@
-import matplotlib.pyplot as plt  # type: ignore
+import matplotlib.pyplot as plt
 from utils.combinatoria import combinaciones
 from model.rectangulo import validacionRectangulo
 from model.cuadrado import validacionCuadrado
 from model.triangulo import validacionTriangulo
 
 def dibujarPuntos(listaPuntos):
-    # Dibujar todos los puntos
+    # dibujar todos los puntos
     for punto in listaPuntos:
         plt.scatter(punto.x, punto.y, color='red')
         plt.text(punto.x + 0.1, punto.y + 0.1, f'({punto.x},{punto.y})')
 
-    # Dibujar cuadrados y rectángulos
+    # dibujar cuadrados y rectangulos
     combinaciones4 = combinaciones(listaPuntos, 4)
     for puntos in combinaciones4:
         if validacionCuadrado(puntos):
@@ -18,7 +18,7 @@ def dibujarPuntos(listaPuntos):
         elif validacionRectangulo(puntos):
             dibujarFigura(puntos)
 
-    # Dibujar triángulos
+    # dibujar triangulos
     combinaciones3 = combinaciones(listaPuntos, 3)
     for puntos in combinaciones3:
         tipo = validacionTriangulo(puntos)
@@ -36,7 +36,7 @@ def dibujarPuntos(listaPuntos):
 
 
 def dibujarFigura(puntos):
-    # Unir puntos en orden y volver al punto inicial
+    # unir puntos en orden y volver al punto inicial
     x = [p.x for p in puntos] + [puntos[0].x]
     y = [p.y for p in puntos] + [puntos[0].y]
     plt.plot(x, y,color='green', linewidth=2)
