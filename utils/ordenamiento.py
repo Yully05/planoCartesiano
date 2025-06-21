@@ -5,3 +5,4 @@ def ordenar_por_area(figuras): # ordena por clave area
             if figuras[j]['area'] > figuras[j + 1]['area']:
                 figuras[j], figuras[j + 1] = figuras[j + 1], figuras[j]
     return figuras
+

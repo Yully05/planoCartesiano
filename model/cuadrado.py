@@ -1,3 +1,4 @@
+
 from utils.operaciones import ecDistancia
 
 def validacionCuadrado(puntos):
@@ -10,3 +11,4 @@ def validacionCuadrado(puntos):
 def area(puntos):
     lado = ecDistancia(puntos[0], puntos[1])
     return lado * lado
+#>>>>>>> 9db5f56897128f2fe38e4226e8fd616d806d2632

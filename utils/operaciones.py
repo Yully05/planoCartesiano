@@ -1,3 +1,11 @@
+def son_iguales(a, b):
+        # Comparación manual con margen de tolerancia
+        diferencia = a - b
+        if diferencia < 0:
+            diferencia = -diferencia
+        return diferencia <= 0.00001
+    
+
 def ecDistancia(punto1, punto2):
     dis = (((punto2.x - punto1.x)**2 + (punto2.y - punto1.y)**2)**0.5)
     return dis
@@ -26,5 +34,6 @@ def calcularDistancia(puntos, i=0, j=1, distancia=None):
     distancias = ecDistancia(puntos[i], puntos[j])
     distancia.append(distancias)
     return calcularDistancia(puntos, i, j + 1, distancia)
+
 
 

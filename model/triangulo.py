@@ -1,3 +1,4 @@
+
 from utils.operaciones import ecDistancia
 
 def validacionTriangulo(puntos):
