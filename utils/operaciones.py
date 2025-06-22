@@ -1,27 +1,30 @@
-def son_iguales(a, b):
-        # Comparación manual con margen de tolerancia
+def iguales(a, b):
+        # comparacion manual con margen de tolerancia
         diferencia = a - b
         if diferencia < 0:
             diferencia = -diferencia
-        return diferencia <= 0.00001
+            return diferencia <= 0.00001
     
 
 def ecDistancia(punto1, punto2):
     dis = (((punto2.x - punto1.x)**2 + (punto2.y - punto1.y)**2)**0.5)
     return dis
 
-def productoPunto(v1, v2):
-    return v1[0]*v2[0] + v1[1]*v2[1]
+#producto punto entre dos vectores
+def productoPunto(vector1, vector2):
+    return vector1[0]*vector2[0] + vector1[1]*vector2[1]
 
-def anguloRecto(p1, p2, p3):
-    v1 = (p1.x - p2.x, p1.y - p2.y)
-    v2 = (p3.x - p2.x, p3.y - p2.y)
-    return abs(productoPunto(v1, v2)) < 0.00001 # diferencia absoluta (abs) = 1x10^-6 = 1e-6
+#verifica si el angulo entre dos vectores es recto
+def anguloRecto(punto1, punto2, punto3):
+    vector1 = (punto1.x - punto2.x, punto1.y - punto2.y)
+    vector2 = (punto3.x - punto2.x, punto3.y - punto2.y)
+    return abs(productoPunto(vector1, vector2)) < 0.00001 # diferencia absoluta (abs) = 1x10^-6 = 1e-6
 
 # recursiva para calcular todas las distancias entre pares de puntos
+#i indice del primer punto / j indice del segundo punto
+# asegura de no repetir ni comparar un punto consigo mismo
 def calcularDistancia(puntos, i=0, j=1, distancia=None):
-    #i indice del primer punto / j indice del segundo punto
-    # asegura de no repetir ni comparar un punto consigo mismo
+    
     if distancia is None:
         distancia = []
 
