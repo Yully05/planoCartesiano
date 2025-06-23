@@ -22,6 +22,7 @@ def validacionRectangulo(puntos):
         distancias[2] == distancias[3] and  #lados largos
         distancias[4] == distancias[5]      # diagonales
     )
-
     return resultado
+
+
 

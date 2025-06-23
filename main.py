@@ -5,10 +5,7 @@ from model.triangulo import validacionTriangulo
 from utils.combinatoria import combinaciones
 from graphics.graficos import dibujarPuntos
 from graphics.figuras import menu
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/rama-yully
+from utils.areas import areaFiguras
 
 lista1 = [Punto(0, 1), Punto(2, 0), Punto(2, 2), Punto(0, 2)]
 lista2 = [Punto(3, 1), Punto(2, 2), Punto(1, 1), Punto(4, 5), Punto(2,5)]
@@ -58,24 +55,10 @@ def analizarLista(lista):
 
 if __name__ == "__main__":
     print("Proyecto ADA I")
-<<<<<<< HEAD
-    for lista in (listaPuntos):
-        analizarLista(lista)
-        dibujarPuntos(lista)
-        while True:
-            figurasSeleccionadas = menu(lista)  
-            if not figurasSeleccionadas:
-                break 
-
-            
-
-
-        
-=======
 
     for lista in (listaPuntos):
         analizarLista(lista)
+        areaFiguras([lista])
         dibujarPuntos(lista)
         menu(lista)
->>>>>>> origin/rama-yully
 

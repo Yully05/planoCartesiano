@@ -21,7 +21,4 @@ def validacionCuadrado(puntos):
         
         return resultado
 
-def area(puntos):
-    lado = ecDistancia(puntos[0], puntos[1])
-    area = lado * lado
-    return area
+

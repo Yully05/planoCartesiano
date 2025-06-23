@@ -22,7 +22,6 @@ def validacionTriangulo(puntos):
     elif lados[0]**2 + lados[1]**2 > lados[2]**2:
         return "acutangulo"
     else:
-        return "no es rectangulos ni acutangulo"
+        return "no es rectangulo ni acutangulo"
     
-def area(puntos):
-    pass
+
