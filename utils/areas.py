@@ -37,23 +37,12 @@ def areaFiguras(listaPuntos): #se crea el metodo con la lista que guarda el area
             elif validacionRectangulo(i):
                 area = areaRectangulo(i)
                 figuras.append(figura(f"Rectangulo #{identificador}",i,area))
-                identificador += 1 
-                
-    figuras = ordenarFigurasPorArea(figuras)
+                identificador += 1
+
     #imprimir los resultados de las areas identificadas
     for f in figuras:
-        print("Nombre:", f["tipo"])
+        print("\nNombre:", f["tipo"])
         print("Área:", f["area"])
         print("Puntos:", [(p.x, p.y) for p in f["puntos"]])
         print("-----------------------")    
-
-def ordenarFigurasPorArea(figuras):
-    n = len(figuras)
-    for i in range(n):
-        for j in range(i + 1, n):
-            if figuras[i]["area"] > figuras[j]["area"]:
-                # Intercambiar posiciones
-                temp = figuras[i]
-                figuras[i] = figuras[j]
-                figuras[j] = temp
-    return figuras
+        
