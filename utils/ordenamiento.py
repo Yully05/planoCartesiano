@@ -1,13 +1,3 @@
-"""def ordenarBubbleSort(figuras): # ordena la lista de los diccionarios figuras. por clave area y el valor
-
-    n = len(figuras) #cantidad figuras
-    for i in range(n): #ciclo principal n veces asegura todas las comparaciones entre pares
-        for j in range(0, n - i - 1): #bucle interno compara areas y realiza los intercambios
-            if figuras[j]['area'] > figuras[j + 1]['area']:
-                figuras[j], figuras[j + 1] = figuras[j + 1], figuras[j]
-    return figuras
-"""
-
 def ordenarLista(lista): #menor a mayaor
 
     listaOrdenada = []

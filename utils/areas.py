@@ -22,21 +22,21 @@ def areaFiguras(listaPuntos): #se crea el metodo con la lista que guarda el area
         combinaciones4 = combinaciones(puntos, 4)
 
         for i in combinaciones3:
-            tipo = validacionTriangulo(i) #sacar el area de cada triangulo segun corresponda 
+            tipo = validacionTriangulo(i) #sacar el area de cada triangulo segun corresponda
             if tipo != "invalido":
-                if tipo== "rectangulo" or tipo=="acutangulo": #se validad que no tome figuras diferentes a los triangulos 
+                if tipo== "rectangulo" or tipo=="acutangulo": #se validad que no tome figuras diferentes a los triangulos
                     area = areaTriangulo(i)
-                    figuras.append(figura(f"Triangulo {tipo} #{identificador}",i,area))
+                    figuras.append(figura(f"#{identificador} Triangulo {tipo} ",i,area))
                     identificador += 1
         
-        for i in combinaciones4: #sacar el area de cada cuadrado o rectangulo segun corresponda 
+        for i in combinaciones4: #sacar el area de cada cuadrado o rectangulo segun corresponda
             if validacionCuadrado(i):
                 area = areaCuadrado(i)
-                figuras.append(figura(f"Cuadrado #{identificador}",i,area))
+                figuras.append(figura(f"#{identificador} Cuadrado ",i,area))
                 identificador += 1
             elif validacionRectangulo(i):
                 area = areaRectangulo(i)
-                figuras.append(figura(f"Rectangulo #{identificador}",i,area))
+                figuras.append(figura(f"#{identificador} Rectangulo ",i,area))
                 identificador += 1
 
     #imprimir los resultados de las areas identificadas
@@ -44,5 +44,5 @@ def areaFiguras(listaPuntos): #se crea el metodo con la lista que guarda el area
         print("\nNombre:", f["tipo"])
         print("Área:", f["area"])
         print("Puntos:", [(p.x, p.y) for p in f["puntos"]])
-        print("-----------------------")    
+        print("-------------------------------")
         

@@ -66,8 +66,8 @@ def dibujarPunto(punto): #grafica unicamente los puntos necesarios
 
 
 def dibujarPlano():
-    plt.axhline(-1,color='gray')
-    plt.axvline(0-1,color='gray')
+    plt.axhline(0,color='blue')
+    plt.axvline(0,color='blue')
     plt.grid(True)
     plt.axis('equal')
     plt.xlabel("Eje X")
