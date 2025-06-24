@@ -8,12 +8,12 @@ from graphics.figuras import menu
 from utils.areas import areaFiguras
 
 lista1 = [Punto(0, 1), Punto(2, 0), Punto(2, 2), Punto(0, 2)]
-lista2 = [Punto(3, 1), Punto(2, 2), Punto(1, 1), Punto(4, 5), Punto(2,5)]
-lista3 = [Punto(0, 1), Punto(5, 1), Punto(3, 2), Punto(1, 2), Punto(3,1)]
-lista4 = [Punto(1, 1), Punto(3, 4), Punto(2, 3), Punto(3, 1)]
-lista5 = [Punto(0, 0), Punto(2, 0), Punto(2, 2), Punto(0, 2)]
-lista6 = [Punto(1, 0), Punto(5, 0), Punto(5, 2), Punto(1,2)]  
-listaPuntos = [lista4] 
+lista2 = [Punto(3, 1), Punto(1, 2), Punto(1, 1), Punto(4, 5), Punto(2,5)]
+lista3 = [Punto(1, 1), Punto(2, 1), Punto(2, 2), Punto(1, 2), Punto(3,1)] #cuadrado
+lista4 = [Punto(1, 1), Punto(1, 3), Punto(2, 3), Punto(2, 1)] #rectangulo
+lista5 = [Punto(0, 0), Punto(2, 0), Punto(2, 2), Punto(0, 2)] #cuadrado
+lista6 = [Punto(1, 0), Punto(1,2)]
+listaPuntos = [lista2]
 
 def analizarLista(lista):
     contCuadrados = 0
@@ -49,17 +49,21 @@ def analizarLista(lista):
             figuras["triangulo acutangulo"].append({"nombre": "triangulo acutangulo", "puntos": puntos})
 
     print("Los puntos de la lista generan:\n")
-    print("Cuadrados:", contCuadrados)
-    print("Rectangulos:", contRectangulos)
-    print("Triangulos rectangulos:", contTrianRectangulo)
-    print("Triangulos acutagulos:", contTriAcutangulo)
+    print("     Cuadrados:", contCuadrados)
+    print("     Rectangulos:", contRectangulos)
+    print("     Triangulos rectangulos:", contTrianRectangulo)
+    print("     Triangulos acutagulos:", contTriAcutangulo)
 
 if __name__ == "__main__":
-    print("Proyecto ADA I")
+    print("\nProyecto ADA I\n")
 
     for lista in (listaPuntos):
         analizarLista(lista)
-        areaFiguras([lista])
-        dibujarPuntos(lista)
-        menu(lista)
+
+        if len(lista) < 3:
+            print("\nNo es posible formar ninguna figura")
+        else:
+            areaFiguras([lista])
+            dibujarPuntos(lista)
+            menu(lista)
 
